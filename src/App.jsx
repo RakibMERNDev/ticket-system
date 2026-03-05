@@ -31,10 +31,12 @@ function App() {
   }, []);
 
   const selectTicket = (ticket) => {
-    setInProgressTickets([...inProgressTickets, ticket]);
+    const ticketWithId = { ...ticket, id: crypto.randomUUID() };
+
+    setInProgressTickets([...inProgressTickets, ticketWithId]);
     localStorage.setItem(
       "inProgressTickets",
-      JSON.stringify([...inProgressTickets, ticket]),
+      JSON.stringify([...inProgressTickets, ticketWithId]),
     );
 
     toast.success("Ticket added to progress list");
@@ -51,7 +53,13 @@ function App() {
       JSON.stringify(updatedInProgressTickets),
     );
 
-    const updatedResolvedTickets = [...resolvedTickets, ticket];
+    const resolvedTicket = {
+      ...ticket,
+      id: crypto.randomUUID(),
+    };
+
+    const updatedResolvedTickets = [...resolvedTickets, resolvedTicket];
+
     setResolvedTickets(updatedResolvedTickets);
     localStorage.setItem(
       "resolvedTickets",
