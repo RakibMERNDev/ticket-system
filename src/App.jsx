@@ -76,15 +76,28 @@ function App() {
       </section>
 
       <section className="bg-gray-100 py-10">
-        <div className="max-w-3xl mx-auto flex justify-between">
-          <ProgressBox label="In Progress" count={inProgressTickets?.length} />
-          <ProgressBox label="Resolved" count={resolvedTickets?.length} />
+        <div className="max-w-3xl mx-auto flex px-5">
+          <div className="w-1/2 pr-2">
+            <ProgressBox
+              classes="bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white w-full"
+              label="In Progress"
+              count={inProgressTickets?.length}
+            />
+          </div>
+
+          <div className="w-1/2 pl-2">
+            <ProgressBox
+              classes="bg-gradient-to-r from-[#4CAF50] to-[#8BC34A] text-white w-full"
+              label="Resolved"
+              count={resolvedTickets?.length}
+            />
+          </div>
         </div>
-        <div className="flex flex-col lg:flex-row justify-between p-5">
+        <div className="flex flex-col xl:flex-row justify-between p-5">
           <div className="space-y-3">
             <h4 className="text-xl">Customer Tickets</h4>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2  gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2  gap-5">
               {tickets.map((ticket) => (
                 <TicketCard
                   key={ticket.id}
@@ -95,39 +108,54 @@ function App() {
             </div>
           </div>
 
-          <div className="space-y-3">
-            <h4 className="text-xl ">Ticket Status</h4>
-            <div className="flex flex-col gap-3">
-              {inProgressTickets.map((ticket) => (
-                <div
-                  key={ticket.id}
-                  className="shadow-md w-full rounded-md bg-white py-4 flex flex-col items-center gap-3"
-                >
-                  <div className="flex justify-between px-4 lg:text-xl w-full">
-                    {ticket?.title}
+          <div className=" grid md:grid-cols-2 xl:grid-cols-1 gap-5 xl:gap-2 mt-5">
+            <div>
+              <h4 className="text-xl ">Ticket Status</h4>
+              <div className="flex flex-col gap-3 mt-3">
+                {inProgressTickets.length === 0 && (
+                  <div className="text-center text-gray-500">
+                    No tickets in progress. Please select a ticket
                   </div>
-
-                  <button
-                    onClick={() => markAsResolved(ticket)}
-                    className="bg-green-700 text-white px-4 py-1 hover:bg-green-400 rounded-md"
+                )}
+                {inProgressTickets.map((ticket) => (
+                  <div
+                    key={ticket.id}
+                    className="shadow-md w-full rounded-md bg-white py-4 flex flex-col items-center gap-3"
                   >
-                    Mark as Resolved
-                  </button>
-                </div>
-              ))}
-            </div>
-            <h4 className="text-xl">Resolved Task</h4>
-            <div className="grid grid-cols-1 gap-3">
-              {resolvedTickets.map((ticket) => (
-                <div
-                  key={ticket.id}
-                  className="shadow-md rounded-md bg-[#E0E7FF] py-4 flex flex-col items-center gap-3"
-                >
-                  <div className="flex justify-between px-4 lg:text-xl w-full">
-                    {ticket?.title}
+                    <div className="flex justify-between px-4 lg:text-xl w-full">
+                      {ticket?.title}
+                    </div>
+
+                    <button
+                      onClick={() => markAsResolved(ticket)}
+                      className="bg-green-700 text-white px-4 py-1 hover:bg-green-400 rounded-md"
+                    >
+                      Mark as Resolved
+                    </button>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+            <div>
+              <h4 className="text-xl">Resolved Task</h4>
+              <div className="grid grid-cols-1 gap-3 mt-3">
+                {resolvedTickets.length === 0 && (
+                  <div className="text-center text-gray-500">
+                    No tickets resolved yet. Please mark a ticket as resolved.
+                  </div>
+                )}
+
+                {resolvedTickets.map((ticket) => (
+                  <div
+                    key={ticket.id}
+                    className="shadow-md rounded-md bg-[#E0E7FF] py-4 flex flex-col items-center gap-3"
+                  >
+                    <div className="flex justify-between px-4 lg:text-xl w-full">
+                      {ticket?.title}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
