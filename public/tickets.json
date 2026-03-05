@@ -4,7 +4,7 @@
     "title": "Login issue",
     "description": "User unable to login with correct credentials.",
     "customer": "Alice Johnson",
-    "priority": "High",
+    "priority": "HIGH PRIORITY",
     "status": "Open",
     "createdAt": "2026-03-01T09:15:00Z"
   },
@@ -13,7 +13,7 @@
     "title": "Payment failure",
     "description": "Transaction fails when using credit card.",
     "customer": "Bob Smith",
-    "priority": "Critical",
+    "priority": "HIGH PRIORITY",
     "status": "In Progress",
     "createdAt": "2026-03-02T11:42:00Z"
   },
@@ -22,7 +22,7 @@
     "title": "Bug in report generation",
     "description": "Monthly report shows incorrect totals.",
     "customer": "Charlie Lee",
-    "priority": "Medium",
+    "priority": "MEDIUM PRIORITY",
     "status": "Open",
     "createdAt": "2026-03-03T14:05:00Z"
   },
@@ -31,16 +31,16 @@
     "title": "Feature request: Dark mode",
     "description": "Customer requests dark mode for dashboard.",
     "customer": "Dana White",
-    "priority": "Low",
+    "priority": "LOW PRIORITY",
     "status": "Open",
     "createdAt": "2026-03-03T16:20:00Z"
   },
   {
     "id": 5,
-    "title": "Email notifications not received",
+    "title": "Notifications not received",
     "description": "User not receiving password reset emails.",
     "customer": "Ethan Brown",
-    "priority": "High",
+    "priority": "HIGH PRIORITY",
     "status": "In Progress",
     "createdAt": "2026-03-04T08:50:00Z"
   },
@@ -49,7 +49,7 @@
     "title": "App crashes on launch",
     "description": "Mobile app crashes immediately after opening.",
     "customer": "Fiona Green",
-    "priority": "Critical",
+    "priority": "HIGH PRIORITY",
     "status": "Open",
     "createdAt": "2026-03-04T10:30:00Z"
   },
@@ -58,7 +58,7 @@
     "title": "Slow loading dashboard",
     "description": "Dashboard takes over 30 seconds to load data.",
     "customer": "George King",
-    "priority": "Medium",
+    "priority": "MEDIUM PRIORITY",
     "status": "Open",
     "createdAt": "2026-03-05T09:10:00Z"
   },
@@ -67,8 +67,8 @@
     "title": "Incorrect invoice amount",
     "description": "Invoice shows wrong amount for last month.",
     "customer": "Hannah Scott",
-    "priority": "High",
-    "status": "Closed",
+    "priority": "HIGH PRIORITY",
+    "status": "Open",
     "createdAt": "2026-03-05T12:45:00Z"
   },
   {
@@ -76,7 +76,7 @@
     "title": "Unable to upload files",
     "description": "File upload fails for PDF documents.",
     "customer": "Ian Thomas",
-    "priority": "Medium",
+    "priority": "MEDIUM PRIORITY",
     "status": "In Progress",
     "createdAt": "2026-03-05T14:30:00Z"
   },
@@ -85,7 +85,7 @@
     "title": "Password reset loop",
     "description": "User stuck in password reset loop, cannot login.",
     "customer": "Jane Wilson",
-    "priority": "Critical",
+    "priority": "HIGH PRIORITY",
     "status": "Open",
     "createdAt": "2026-03-05T16:00:00Z"
   }
